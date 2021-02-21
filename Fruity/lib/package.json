@@ -1,0 +1,20 @@
+{
+  "name": "fruity",
+  "version": "1.0.0",
+  "description": "Fruity 2D is a game engine written in javascript, used for web-based games.\r It has many features, such as:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkboat/Fruity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darkboat/Fruity/issues"
+  },
+  "homepage": "https://github.com/darkboat/Fruity#readme"
+}

@@ -10,6 +10,17 @@ It has many features, such as:
 ## Installation
 
 To install Fruity 2D you can use npm
-`npm install @rexysaur/fruity`
+
+```cmd
+npm install @rexysaur/fruity
+```
 
 or use github to clone a barebone project
+
+```cmd
+git clone https://github.com/darkboat/Fruity/
+```
+
+## Usage
+
+###
