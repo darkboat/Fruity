@@ -14,3 +14,5 @@ class BoxCollider {
     this.positionY = Sprite.positionY; // the sprites y pos
   }
 }
+
+export default BoxCollider;

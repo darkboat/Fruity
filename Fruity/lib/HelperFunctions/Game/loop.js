@@ -1,7 +1,9 @@
-function loop(cb, this) {
+function loop(cb, gameInstance) {
   window.requestAnimationFrame(() => {
-    let generated = this.draw();
-    cb(generated);
+    let generated = gameInstance.draw();
+    if (cb) {
+      cb(generated);
+    }
   });
 }
 
