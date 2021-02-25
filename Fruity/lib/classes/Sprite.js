@@ -1,11 +1,14 @@
 class Sprite {
-  constructor(GameInstance, x, y, width, height) {
-    this.ctx = GameInstance.ctx;
+  constructor(gameInstance, x, y, width, height) {
+    this.ctx = gameInstance.ctx;
 
+    // Position and Scale
     this.positionX = x;
     this.positionY = y;
     this.width = width;
     this.height = height;
+
+    this.gameInstance = gameInstance;
   }
 
   draw() {
@@ -44,6 +47,10 @@ class Sprite {
     this.positionX -= amount; // Changes by the amount set as a parameter
     this.positionY = this.positionY; // Stays the same as we are only moving on the "x" axis
     this.draw();
+  }
+
+  onCollision(Sprite) {
+    console.log(this.positionX);
   }
 }
 

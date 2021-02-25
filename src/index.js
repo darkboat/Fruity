@@ -5,32 +5,32 @@ const speed = 5; // Amount of pixels the character will move by
 
 const game = new fruity.Game(canvas); // Initiate Game
 
-const character = new fruity.Sprite(game, 100, 100, 50, 50); // Create a sprite(character)
-game.Sprites.push(character); // Add the sprite to the draw loop
+const p1 = new fruity.Sprite(game, 100, 100, 50, 50); // Create a sprite(p1)
+const p2 = new fruity.Sprite(game, 200, 200, 50, 50); // Create a sprite(p2)
 
 game
   .onKeyPress("w", () => {
     // When "w" is pressed it will move our character up
-    character.moveUp(speed);
+    p1.moveUp(speed);
   })
   .onKeyPress("a", () => {
     // When "a" is pressed it will move our character to the left
-    character.moveLeft(speed);
+    p1.moveLeft(speed);
   })
   .onKeyPress("s", () => {
     // When "s" is pressed it will move our character down
-    character.moveDown(speed);
+    p1.moveDown(speed);
   })
   .onKeyPress("d", () => {
     // When "d" is pressed it will move our character to the right
-    character.moveRight(speed);
-  })
-  .onKeyPress(" ", () => {
-    // When "spacebar" is pressed it will make our character jump
-    character.moveUp(50);
-    setTimeout(() => {
-      character.moveDown(50);
-    }, 2000);
+    p1.moveRight(speed);
   });
 
-game.loop(); // Run the game loop
+const p1BoxCollider = new fruity.BoxCollider(p1);
+const p2BoxCollider = new fruity.BoxCollider(p2);
+
+game.Sprites.push(p1, p2);
+
+game.loop(() => {
+  game.getBoxColliders().forEach((box) => box.update());
+}); // Run the game loop

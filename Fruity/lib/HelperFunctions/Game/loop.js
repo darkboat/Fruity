@@ -4,6 +4,9 @@ function loop(cb, gameInstance) {
     if (cb) {
       cb(generated);
     }
+    window.requestAnimationFrame(() => {
+      loop(cb, gameInstance);
+    });
   });
 }
 

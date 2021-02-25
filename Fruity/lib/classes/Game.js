@@ -1,4 +1,4 @@
-import draw from "../HelperFunctions/Game/draw";
+import _draw from "../HelperFunctions/Game/draw";
 import loop from "../HelperFunctions/Game/loop";
 import keypress from "../HelperFunctions/Game/keypress";
 
@@ -10,9 +10,12 @@ class Game {
     this.ctx = canvas.getContext("2d");
     this.Sprites = [];
 
-    // Key Event Array
+    // Key Arrays
     this.keyEventArray = [];
     this.keyCallbackArray = [];
+
+    // Box-Collider Arrays
+    this.BoxColliders = [];
 
     document.addEventListener("keypress", (keyPressed) => {
       const key = keyPressed.key;
@@ -24,7 +27,7 @@ class Game {
   }
 
   draw() {
-    draw(this);
+    _draw(this);
   }
 
   loop(cb) {
@@ -34,6 +37,14 @@ class Game {
   onKeyPress(key, cb) {
     keypress(key, cb, this);
     return this;
+  }
+
+  addBoxColliders(boxCollider) {
+    this.BoxColliders.push(boxCollider);
+  }
+
+  getBoxColliders() {
+    return this.BoxColliders;
   }
 }
 
